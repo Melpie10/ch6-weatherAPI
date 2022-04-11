@@ -1,11 +1,4 @@
-// local storage
-// 
-
-
-
-
-// global variables
-var apiKey = "010fbf3470fc6c0b214004556227d896";
+var apiKey = "1b18ce13c84e21faafb19c931bb29331";
 var savedSearches = [];
 
 // make list of previously searched cities
@@ -17,16 +10,16 @@ var searchHistoryList = function(cityName) {
     searchHistoryEntry.addClass("past-search");
     searchHistoryEntry.text(cityName);
 
-    // create container for entry
-    var searchEntryContainer = $("<div>");
-    searchEntryContainer.addClass("past-search-container");
+    // create box for entry
+    var searchEntrybox = $("<div>");
+    searchEntrybox.addClass("past-search-box");
 
-    // append entry to container
-    searchEntryContainer.append(searchHistoryEntry);
+    // append entry to box
+    searchEntrybox.append(searchHistoryEntry);
 
-    // append entry container to search history container
-    var searchHistoryContainerEl = $("#search-history-container");
-    searchHistoryContainerEl.append(searchEntryContainer);
+    // append entry box to search history box
+    var searchHistoryboxEl = $("#search-history-box");
+    searchHistoryboxEl.append(searchEntrybox);
 
     if (savedSearches.length > 0){
         // update savedSearches array with previously saved searches
@@ -43,7 +36,7 @@ var searchHistoryList = function(cityName) {
 
 };
 
-// load saved search history entries into search history container
+// load saved search history entries into search history box
 var loadSearchHistory = function() {
     // get saved search history
     var savedSearchHistory = localStorage.getItem("savedSearches");
@@ -83,9 +76,9 @@ var currentWeatherSection = function(cityName) {
                 .then(function(response){
                     searchHistoryList(cityName);
 
-                    // add current weather container with border to page
-                    var currentWeatherContainer = $("#current-weather-container");
-                    currentWeatherContainer.addClass("current-weather-container");
+                    // add current weather box with border to page
+                    var currentWeatherbox = $("#current-box");
+                    currentWeatherbox.addClass("current-box");
 
                     // add city name, date, and weather icon to current weather section title
                     var currentTitle = $("#current-title");
@@ -159,7 +152,7 @@ var fiveDayForecastSection = function(cityName) {
 
                     // using data from response, set up each day of 5 day forecast
                     for (var i = 1; i <= 5; i++) {
-                        // add class to future cards to create card containers
+                        // add class to future cards to create card boxs
                         var futureCard = $(".future-card");
                         futureCard.addClass("future-card-details");
 
@@ -187,7 +180,7 @@ var fiveDayForecastSection = function(cityName) {
 };
 
 // called when the search form is submitted
-$("#search-form").on("submit", function() {
+$("#search_form").on("submit", function() {
     event.preventDefault();
     
     // get name of city searched
@@ -205,7 +198,7 @@ $("#search-form").on("submit", function() {
 });
 
 // called when a search history entry is clicked
-$("#search-history-container").on("click", "p", function() {
+$("#search-history-box").on("click", "p", function() {
     // get text (city name) of entry and pass it as a parameter to display weather conditions
     var previousCityName = $(this).text();
     currentWeatherSection(previousCityName);

@@ -1,24 +1,41 @@
-.search-history-container {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.form-box {
   padding: 10px;
 }
 
 
+.search-button {
+  padding: 10px 15px;
+}
+
+/* don't touch */
+.search-history-box {
+  padding: 10px;
+}
+
 .past-search {
-  background-color: white;
+  background-color: rgb(201, 198, 198);
   border-width: thin;
-  border-color: lightgrey;
+  border-color: rgb(8, 20, 184);
   border-style: solid;
   border-radius: 3px;
   margin: 0;
-  text-align: left;
+  text-align: center;
   width: 350px;
   height: 45px;
   line-height: 45px;
   padding: 0 20px;
-  color: grey;
+  color: rgb(2, 0, 0);
 }
 
-.current-weather-container {
+
+.current-box {
   border-color: lightgrey;
   border-width: thin 0 thin thin;
   border-style: solid;
@@ -27,7 +44,7 @@
   padding: 0 0 12px 0;
 }
 
-.current-title-container {
+.current-title-box {
   display: flex;
 }
 
@@ -71,7 +88,7 @@
   backgound-color: red;
 }
 
-.future-forecast-container {
+.future-forecast-box {
   margin: 5px 20px 0 20px;
 }
 
