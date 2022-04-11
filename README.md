@@ -26,6 +26,7 @@ Github pages: https://melpie10.github.io/ch6-weatherAPI/
 
 
 How the weather dashboard looks: 
+![Screen Shot 2022-04-11 at 11 15 32 AM](https://user-images.githubusercontent.com/92319522/162774525-e8479146-0492-47aa-bc06-7d96b8ce7a25.png)
 
 
 ## Contributing
