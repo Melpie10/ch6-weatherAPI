@@ -1,5 +1,7 @@
-var apiKey = "1b18ce13c84e21faafb19c931bb29331";
+var apiKey = "010fbf3470fc6c0b214004556227d896";
 var savedSearches = [];
+
+
 
 // make list of previously searched cities
 var searchHistoryList = function(cityName) {
